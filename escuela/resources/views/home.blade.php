@@ -1,23 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+@foreach ($users as $user)
+    <div>{{ $user->name }}</div>
+    <button><a>🗑</a></button>
+    <button><a>🖍</a></button>
 
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+@endforeach
+<button><a>Añadir Estudiante</a></button>
+
 @endsection
