@@ -28,6 +28,7 @@ class UserController extends Controller
     public function create()
     {
         //
+        return view ('createUser');
     }
 
     /**
@@ -83,6 +84,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::destroy($id);
+        return redirect()->route('home');
     }
 }
